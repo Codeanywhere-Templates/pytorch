@@ -14,6 +14,11 @@
     "ghcr.io/devcontainers/features/python:1": {
       "installTools": "true",
       "toolsToInstall": "uv,ruff,mypy,MonkeyType,bandit"
+    },
+    // git
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "os-provided",
+      "ppa": "false"
     }
   },
   // Use base images default CMD.
@@ -52,7 +57,7 @@
     }
   },
   // Use 'postCreateCommand' to run commands after the container is created.
-"postCreateCommand": "pip3 install -r requirements.txt",
+  "postCreateCommand": "pip3 install --user -r requirements.txt",
 
   // Configure tool-specific properties.
   // "customizations": {},
